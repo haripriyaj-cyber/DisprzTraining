@@ -1,132 +1,113 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using DisprzTraining.DataAccess; // To reference AppDbContext
-using DisprzTraining.Models;     // To reference Appointment model
-using System.Linq;               // For Any() and ToList()
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using AutoMapper;
+using DisprzTraining.Business.Services;
+using DisprzTraining.Models;
+using DisprzTraining.Models.DTOs;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace DisprzTraining.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    
     public class AppointmentsController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly IAppointmentService _appointmentService;
+        private readonly IMapper _mapper;
 
-        public AppointmentsController(AppDbContext context)
+        public AppointmentsController(IAppointmentService appointmentService, IMapper mapper)
         {
-            _context = context;
+            _appointmentService = appointmentService;
+            _mapper = mapper;
         }
 
-        // GET: api/appointments
         [HttpGet]
-        public IActionResult GetAppointments()
+        [SwaggerOperation(Summary = "Get all appointments", Description = "Retrieves a list of all appointments")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<AppointmentDTO>))]
+        public async Task<IActionResult> GetAll()
         {
-            var appointments = _context.Appointments.ToList();
-            return Ok(appointments);
+            var appointments = await _appointmentService.GetAllAppointmentsAsync();
+            var appointmentDtos = _mapper.Map<IEnumerable<AppointmentDTO>>(appointments);
+            return Ok(appointmentDtos);
         }
 
-        // GET: api/appointments/{id}
         [HttpGet("{id}")]
-        public IActionResult GetAppointmentById(int id)
+        [SwaggerOperation(Summary = "Get appointment by ID", Description = "Retrieves a specific appointment by its ID")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AppointmentDTO))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetById(int id)
         {
-            var appointment = _context.Appointments.Find(id);
-            if (appointment == null)
+            try
             {
-                return NotFound(new { message = "Appointment not found." });
+                var appointment = await _appointmentService.GetAppointmentByIdAsync(id);
+                var appointmentDto = _mapper.Map<AppointmentDTO>(appointment);
+                return Ok(appointmentDto);
             }
-            return Ok(appointment);
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
-        // POST: api/appointments
         [HttpPost]
-        public IActionResult CreateAppointment(Appointment appointment)
+        [SwaggerOperation(Summary = "Create a new appointment", Description = "Creates a new appointment")]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(AppointmentDTO))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Create([FromBody] CreateAppointmentDTO appointmentDto)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                var appointment = await _appointmentService.CreateAppointmentAsync(appointmentDto);
+                var createdAppointmentDto = _mapper.Map<AppointmentDTO>(appointment);
+                return CreatedAtAction(nameof(GetById), new { id = appointment.Id }, createdAppointmentDto);
             }
-
-            bool hasConflict = _context.Appointments.Any(a =>
-                a.Date == appointment.Date &&
-                (
-                    (appointment.StartTime >= a.StartTime && appointment.StartTime < a.EndTime) ||
-                    (appointment.EndTime > a.StartTime && appointment.EndTime <= a.EndTime) ||
-                    (appointment.StartTime <= a.StartTime && appointment.EndTime >= a.EndTime)
-                )
-            );
-
-            if (hasConflict)
+            catch (ArgumentException ex)
             {
-                return Conflict(new { message = "Appointment time conflicts with an existing appointment." });
+                return BadRequest(ex.Message);
             }
-
-            _context.Appointments.Add(appointment);
-            _context.SaveChanges();
-
-            return CreatedAtAction(nameof(GetAppointments), new { id = appointment.Id }, appointment);
         }
 
-        // PUT: api/appointments/{id}
         [HttpPut("{id}")]
-        public IActionResult UpdateAppointment(int id, Appointment updatedAppointment)
+        [SwaggerOperation(Summary = "Update an appointment", Description = "Updates an existing appointment")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AppointmentDTO))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateAppointmentDTO appointmentDto)
         {
-            if (id != updatedAppointment.Id)
+            try
             {
-                return BadRequest(new { message = "Appointment ID mismatch." });
+                var appointment = await _appointmentService.UpdateAppointmentAsync(id, appointmentDto);
+                var updatedAppointmentDto = _mapper.Map<AppointmentDTO>(appointment);
+                return Ok(updatedAppointmentDto);
             }
-
-            if (!ModelState.IsValid)
+            catch (KeyNotFoundException ex)
             {
-                return BadRequest(ModelState);
+                return NotFound(ex.Message);
             }
-
-            var existingAppointment = _context.Appointments.Find(id);
-            if (existingAppointment == null)
+            catch (ArgumentException ex)
             {
-                return NotFound(new { message = "Appointment not found." });
+                return BadRequest(ex.Message);
             }
-
-            bool hasConflict = _context.Appointments.Any(a =>
-                a.Id != id &&
-                a.Date == updatedAppointment.Date &&
-                (
-                    (updatedAppointment.StartTime >= a.StartTime && updatedAppointment.StartTime < a.EndTime) ||
-                    (updatedAppointment.EndTime > a.StartTime && updatedAppointment.EndTime <= a.EndTime) ||
-                    (updatedAppointment.StartTime <= a.StartTime && updatedAppointment.EndTime >= a.EndTime)
-                )
-            );
-
-            if (hasConflict)
-            {
-                return Conflict(new { message = "Appointment time conflicts with an existing appointment." });
-            }
-
-            // Update fields
-            existingAppointment.Title = updatedAppointment.Title;
-            existingAppointment.Description = updatedAppointment.Description;
-            existingAppointment.Date = updatedAppointment.Date;
-            existingAppointment.StartTime = updatedAppointment.StartTime;
-            existingAppointment.EndTime = updatedAppointment.EndTime;
-
-            _context.SaveChanges();
-
-            return NoContent();
         }
 
-        // DELETE: api/appointments/{id}
         [HttpDelete("{id}")]
-        public IActionResult DeleteAppointment(int id)
+        [SwaggerOperation(Summary = "Delete an appointment", Description = "Deletes an existing appointment")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Delete(int id)
         {
-            var appointment = _context.Appointments.Find(id);
-            if (appointment == null)
+            try
             {
-                return NotFound(new { message = "Appointment not found." });
+                await _appointmentService.DeleteAppointmentAsync(id);
+                return NoContent();
             }
-
-            _context.Appointments.Remove(appointment);
-            _context.SaveChanges();
-
-            return NoContent();
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
     }
 }

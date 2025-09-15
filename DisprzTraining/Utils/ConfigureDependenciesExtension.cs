@@ -1,8 +1,6 @@
-﻿using DisprzTraining.Business;
-using DisprzTraining.DataAccess;
-using Microsoft.Extensions.Configuration;
+﻿using DisprzTraining.Business.Services;
+using DisprzTraining.DataAccess.Repositories;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
 namespace DisprzTraining.Utils
 {
@@ -10,10 +8,14 @@ namespace DisprzTraining.Utils
     {
         public static void ConfigureDependencyInjections(this IServiceCollection services)
         {
-            services.AddHttpContextAccessor();
-
-            services.AddScoped<IHelloWorldBL, HelloWorldBL>();
-            services.AddScoped<IHelloWorldDAL, HelloWorldDAL>();
+            // Register repositories
+            services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+            
+            // Register services
+            services.AddScoped<IAppointmentService, AppointmentService>();
+            
+            // Register AutoMapper
+            services.AddAutoMapper(typeof(MappingProfile));
         }
     }
 }

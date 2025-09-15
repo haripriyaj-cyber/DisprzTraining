@@ -275,3 +275,6 @@ E:\DisprzTraining\DisprzTraining\obj\Debug\net9.0\refint\DisprzTraining.dll
 E:\DisprzTraining\DisprzTraining\obj\Debug\net9.0\DisprzTraining.pdb
 E:\DisprzTraining\DisprzTraining\obj\Debug\net9.0\DisprzTraining.genruntimeconfig.cache
 E:\DisprzTraining\DisprzTraining\obj\Debug\net9.0\ref\DisprzTraining.dll
+E:\DisprzTraining\DisprzTraining\bin\Debug\net9.0\AutoMapper.dll
+E:\DisprzTraining\DisprzTraining\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\DisprzTraining\DisprzTraining\bin\Debug\net9.0\Swashbuckle.AspNetCore.Annotations.dll
