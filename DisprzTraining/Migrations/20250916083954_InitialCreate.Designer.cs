@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DisprzTraining.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250914142856_AddAppointmentFields")]
-    partial class AddAppointmentFields
+    [Migration("20250916083954_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

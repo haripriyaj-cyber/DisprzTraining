@@ -8333,11 +8333,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj",
+      "projectUniqueName": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj",
       "projectName": "DisprzTraining",
-      "projectPath": "E:\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj",
+      "projectPath": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj",
       "packagesPath": "C:\\Users\\haripriya.j_disprz\\.nuget\\packages\\",
-      "outputPath": "E:\\DisprzTraining\\DisprzTraining\\obj\\",
+      "outputPath": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
