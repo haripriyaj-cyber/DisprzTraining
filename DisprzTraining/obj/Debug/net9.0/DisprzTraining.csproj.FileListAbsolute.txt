@@ -558,3 +558,7 @@ E:\Calenderapp\DisprzTraining\DisprzTraining\obj\Debug\net9.0\refint\DisprzTrain
 E:\Calenderapp\DisprzTraining\DisprzTraining\obj\Debug\net9.0\DisprzTraining.pdb
 E:\Calenderapp\DisprzTraining\DisprzTraining\obj\Debug\net9.0\DisprzTraining.genruntimeconfig.cache
 E:\Calenderapp\DisprzTraining\DisprzTraining\obj\Debug\net9.0\ref\DisprzTraining.dll
+E:\Calenderapp\DisprzTraining\DisprzTraining\bin\Debug\net9.0\DisprzTraining.xml
+E:\Calenderapp\DisprzTraining\DisprzTraining\obj\Debug\net9.0\DisprzTraining.xml
+E:\Calenderapp\DisprzTraining\DisprzTraining\bin\Debug\net9.0\Microsoft.OpenApi.Readers.dll
+E:\Calenderapp\DisprzTraining\DisprzTraining\bin\Debug\net9.0\SharpYaml.dll

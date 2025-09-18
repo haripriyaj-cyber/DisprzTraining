@@ -2,6 +2,9 @@
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using DisprzTraining.DataAccess;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
+using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,17 +25,40 @@ builder.Services.AddControllers()
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configure Swagger
+// Configure Swagger with enhanced documentation
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
-    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "DisprzTraining API",
+        Title = "Appointment Scheduler API",
         Version = "v1",
-        Description = "API for managing appointments"
+        Description = "API for managing calendar appointments and scheduling",
+        Contact = new OpenApiContact
+        {
+            Name = "Disprz Training Team",
+            Email = "training@disprz.com",
+            Url = new Uri("https://github.com/haripriyaj-cyber/DisprzTraining")
+        },
+        License = new OpenApiLicense
+        {
+            Name = "MIT License",
+            Url = new Uri("https://opensource.org/licenses/MIT")
+        }
     });
+    
+    // Include XML comments
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    if (File.Exists(xmlPath))
+    {
+        c.IncludeXmlComments(xmlPath);
+    }
+    
+    // Organize endpoints by controller
+    c.TagActionsBy(api => new[] { api.GroupName ?? api.ActionDescriptor.RouteValues["controller"] });
+    c.DocInclusionPredicate((docName, api) => true);
 });
 
 // ✅ Configure CORS to allow React frontend with both HTTP and HTTPS
@@ -54,21 +80,23 @@ var app = builder.Build();
 // ✅ Enable CORS before authorization
 app.UseCors();
 
-// Enable Swagger only in development
+// Enable Swagger with improved UI
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
+    app.UseDeveloperExceptionPage();
+    app.UseSwagger(); // Remove the options parameter
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "DisprzTraining API v1");
-        c.RoutePrefix = string.Empty;
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Appointment Scheduler API v1");
+        c.RoutePrefix = string.Empty; // Serve the Swagger UI at the application's root
+        c.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.List);
+        c.DefaultModelsExpandDepth(1);
+        c.EnableDeepLinking();
+        c.DisplayRequestDuration();
     });
 }
 
-// ✅ Redirect HTTP to HTTPS (optional in dev, can skip if using only HTTPS port)
-// You can comment this out if you want to use HTTP directly
-
-// app.UseHttpsRedirection();
+// app.UseHttpsRedirection(); // Uncomment if you want to force HTTPS
 
 app.UseAuthorization();
 app.MapControllers();

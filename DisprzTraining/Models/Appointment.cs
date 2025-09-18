@@ -12,10 +12,10 @@ namespace DisprzTraining.Models
         public string Title { get; set; }
         
         [Required]
-        public DateTime StartTime { get; set; }
+        public DateTimeOffset StartTime { get; set; }
         
         [Required]
-        public DateTime EndTime { get; set; }
+        public DateTimeOffset EndTime { get; set; }
         
         public string Description { get; set; }
         
@@ -23,8 +23,8 @@ namespace DisprzTraining.Models
         
         public string Location { get; set; }
         
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTimeOffset CreatedAt { get; set; } = DateTime.UtcNow;
         
-        public DateTime? UpdatedAt { get; set; }
+        public DateTimeOffset UpdatedAt { get; set; }
     }
 }
