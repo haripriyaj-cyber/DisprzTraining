@@ -130,6 +130,12 @@ namespace DisprzTraining.Controllers
         [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(string))]
         public async Task<IActionResult> Create([FromBody] CreateAppointmentDTO appointmentDto)
         {
+            // Add model validation check
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            
             try
             {
                 var appointment = await _appointmentService.CreateAppointmentAsync(appointmentDto);
@@ -185,6 +191,12 @@ namespace DisprzTraining.Controllers
         [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(string))]
         public async Task<IActionResult> Update(int id, [FromBody] UpdateAppointmentDTO appointmentDto)
         {
+            // Add model validation check
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            
             try
             {
                 var appointment = await _appointmentService.UpdateAppointmentAsync(id, appointmentDto);
