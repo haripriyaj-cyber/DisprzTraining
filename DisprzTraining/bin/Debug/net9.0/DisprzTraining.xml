@@ -154,18 +154,6 @@
         <member name="M:DisprzTraining.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
-        <member name="T:DisprzTraining.Migrations.UseDateTimeOffsetForAppointments">
-            <inheritdoc />
-        </member>
-        <member name="M:DisprzTraining.Migrations.UseDateTimeOffsetForAppointments.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:DisprzTraining.Migrations.UseDateTimeOffsetForAppointments.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:DisprzTraining.Migrations.UseDateTimeOffsetForAppointments.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
         <member name="T:DisprzTraining.Models.DTOs.AppointmentDTO">
             <summary>
             Data transfer object for appointment information

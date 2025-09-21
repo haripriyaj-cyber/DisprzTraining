@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DisprzTraining.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250917172058_UseDateTimeOffsetForAppointments")]
-    partial class UseDateTimeOffsetForAppointments
+    [Migration("20250921043405_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
