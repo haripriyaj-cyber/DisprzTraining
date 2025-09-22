@@ -4,7 +4,7 @@
         <name>DisprzTraining</name>
     </assembly>
     <members>
-        <member name="M:DisprzTraining.Business.Services.AppointmentService.CheckForOverlappingAppointments(System.DateTimeOffset,System.DateTimeOffset,System.Nullable{System.Int32})">
+        <member name="M:DisprzTraining.Business.Services.AppointmentService.CheckForOverlappingAppointments(System.DateTimeOffset,System.DateTimeOffset,System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
             Checks if there are any overlapping appointments for the given time range
             </summary>
@@ -53,6 +53,11 @@
              <returns>The requested appointment</returns>
              <response code="200">Returns the requested appointment</response>
              <response code="404">If the appointment is not found</response>
+        </member>
+        <member name="M:DisprzTraining.Controllers.AppointmentsController.GetByUserId(System.Int32)">
+            <summary>
+            Retrieves all appointments for a specific user
+            </summary>
         </member>
         <member name="M:DisprzTraining.Controllers.AppointmentsController.Create(DisprzTraining.Models.DTOs.CreateAppointmentDTO)">
              <summary>
@@ -142,6 +147,21 @@
             </summary>
             <returns>The OpenAPI specification as JSON</returns>
         </member>
+        <member name="M:DisprzTraining.Controllers.UsersController.Register(DisprzTraining.Models.DTOs.RegisterDTO)">
+            <summary>
+            Registers a new user
+            </summary>
+        </member>
+        <member name="M:DisprzTraining.Controllers.UsersController.Login(DisprzTraining.Models.DTOs.LoginDTO)">
+            <summary>
+            Authenticates a user
+            </summary>
+        </member>
+        <member name="M:DisprzTraining.Controllers.UsersController.GetById(System.Int32)">
+            <summary>
+            Gets a user by ID
+            </summary>
+        </member>
         <member name="T:DisprzTraining.Migrations.InitialCreate">
             <inheritdoc />
         </member>
@@ -152,6 +172,18 @@
             <inheritdoc />
         </member>
         <member name="M:DisprzTraining.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:DisprzTraining.Migrations.AddUserAndFixAppointments">
+            <inheritdoc />
+        </member>
+        <member name="M:DisprzTraining.Migrations.AddUserAndFixAppointments.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DisprzTraining.Migrations.AddUserAndFixAppointments.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DisprzTraining.Migrations.AddUserAndFixAppointments.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="T:DisprzTraining.Models.DTOs.AppointmentDTO">
@@ -213,6 +245,12 @@
             </summary>
             <example>2023-05-26T09:15:00Z</example>
         </member>
+        <member name="P:DisprzTraining.Models.DTOs.AppointmentDTO.UserId">
+            <summary>
+            User identifier for the appointment
+            </summary>
+            <example>1</example>
+        </member>
         <member name="T:DisprzTraining.Models.DTOs.CreateAppointmentDTO">
             <summary>
             Data transfer object for creating a new appointment
@@ -254,6 +292,58 @@
             </summary>
             <example>Conference Room A</example>
         </member>
+        <member name="P:DisprzTraining.Models.DTOs.CreateAppointmentDTO.UserId">
+            <summary>
+            User ID of the appointment
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="T:DisprzTraining.Models.DTOs.LoginDTO">
+            <summary>
+            Data transfer object for user login
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.LoginDTO.Username">
+            <summary>
+            Username for login
+            </summary>
+            <example>johndoe</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.LoginDTO.Password">
+            <summary>
+            Password for login
+            </summary>
+            <example>password123</example>
+        </member>
+        <member name="T:DisprzTraining.Models.DTOs.RegisterDTO">
+            <summary>
+            Data transfer object for user registration
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.RegisterDTO.Username">
+            <summary>
+            Username for registration
+            </summary>
+            <example>johndoe</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.RegisterDTO.Password">
+            <summary>
+            Password for registration
+            </summary>
+            <example>password123</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.RegisterDTO.Email">
+            <summary>
+            Email address
+            </summary>
+            <example>john.doe@example.com</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.RegisterDTO.FullName">
+            <summary>
+            Full name of the user
+            </summary>
+            <example>John Doe</example>
+        </member>
         <member name="T:DisprzTraining.Models.DTOs.UpdateAppointmentDTO">
             <summary>
             Data transfer object for updating an existing appointment
@@ -294,6 +384,36 @@
             Location of the appointment
             </summary>
             <example>Conference Room B</example>
+        </member>
+        <member name="T:DisprzTraining.Models.DTOs.UserDTO">
+            <summary>
+            Data transfer object for user information
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UserDTO.Id">
+            <summary>
+            Unique identifier for the user
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UserDTO.Username">
+            <summary>
+            Username of the user
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UserDTO.Email">
+            <summary>
+            Email address of the user
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UserDTO.FullName">
+            <summary>
+            Full name of the user
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UserDTO.CreatedAt">
+            <summary>
+            When the user was created
+            </summary>
         </member>
     </members>
 </doc>

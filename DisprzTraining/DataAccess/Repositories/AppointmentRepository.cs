@@ -20,7 +20,7 @@ namespace DisprzTraining.DataAccess.Repositories
             return await _context.Appointments.ToListAsync();
         }
 
-        public async Task<Appointment> GetByIdAsync(int id)
+        public async Task<Appointment?> GetByIdAsync(int id)
         {
             return await _context.Appointments.FindAsync(id);
         }
@@ -49,6 +49,13 @@ namespace DisprzTraining.DataAccess.Repositories
             _context.Appointments.Remove(appointment);
             await _context.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<IEnumerable<Appointment>> GetByUserIdAsync(int userId)
+        {
+            return await _context.Appointments
+                .Where(a => a.UserId == userId)
+                .ToListAsync();
         }
     }
 }

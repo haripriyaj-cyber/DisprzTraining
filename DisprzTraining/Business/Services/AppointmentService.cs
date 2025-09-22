@@ -31,6 +31,11 @@ namespace DisprzTraining.Business.Services
             return appointment;
         }
 
+        public async Task<IEnumerable<Appointment>> GetAppointmentsByUserIdAsync(int userId)
+        {
+            return await _appointmentRepository.GetByUserIdAsync(userId);
+        }
+
         public async Task<Appointment> CreateAppointmentAsync(CreateAppointmentDTO appointmentDto)
         {
             // Validate business rules
@@ -38,7 +43,7 @@ namespace DisprzTraining.Business.Services
                 throw new ArgumentException("End time must be after start time");
 
             // Check for overlapping appointments
-            await CheckForOverlappingAppointments(appointmentDto.StartTime, appointmentDto.EndTime);
+            await CheckForOverlappingAppointments(appointmentDto.StartTime, appointmentDto.EndTime, appointmentDto.UserId);
 
             var appointment = new Appointment
             {
@@ -48,6 +53,7 @@ namespace DisprzTraining.Business.Services
                 Description = appointmentDto.Description,
                 IsAllDay = appointmentDto.IsAllDay,
                 Location = appointmentDto.Location,
+                UserId = appointmentDto.UserId ?? 1, // Use default user (ID=1) if no user specified
                 CreatedAt = DateTime.UtcNow
             };
 
@@ -65,7 +71,7 @@ namespace DisprzTraining.Business.Services
                 throw new KeyNotFoundException($"Appointment with ID {id} not found");
 
             // Check for overlapping appointments (excluding the current appointment being updated)
-            await CheckForOverlappingAppointments(appointmentDto.StartTime, appointmentDto.EndTime, id);
+            await CheckForOverlappingAppointments(appointmentDto.StartTime, appointmentDto.EndTime, existingAppointment.UserId, id);
 
             // Update properties
             existingAppointment.Title = appointmentDto.Title;
@@ -96,20 +102,21 @@ namespace DisprzTraining.Business.Services
         /// <param name="excludeAppointmentId">Optional ID of appointment to exclude from the check (for updates)</param>
         /// <returns>Task</returns>
         /// <exception cref="InvalidOperationException">Thrown when there's a conflict</exception>
-        private async Task CheckForOverlappingAppointments(DateTimeOffset startTime, DateTimeOffset endTime, int? excludeAppointmentId = null)
+        private async Task CheckForOverlappingAppointments(DateTimeOffset startTime, DateTimeOffset endTime, int? userId = null, int? excludeAppointmentId = null)
         {
-            var allAppointments = await _appointmentRepository.GetAllAsync();
+            // Only get appointments for the specified user
+            var userAppointments = await _appointmentRepository.GetByUserIdAsync(userId ?? 1);
             
             // Filter out the appointment being updated if an ID is provided
-            var potentialConflicts = allAppointments
+            var potentialConflicts = userAppointments
                 .Where(a => excludeAppointmentId == null || a.Id != excludeAppointmentId)
                 .ToList();
 
-            // Check for overlaps - fixed to handle adjacent appointments correctly
+            // Check for overlaps
             var overlappingAppointment = potentialConflicts.FirstOrDefault(a => 
-                // New appointment starts during an existing appointment (strictly before end)
+                // New appointment starts during an existing appointment
                 (startTime >= a.StartTime && startTime < a.EndTime) ||
-                // New appointment ends during an existing appointment (strictly after start)
+                // New appointment ends during an existing appointment
                 (endTime > a.StartTime && endTime <= a.EndTime) ||
                 // New appointment completely contains an existing appointment
                 (startTime < a.StartTime && endTime > a.EndTime));

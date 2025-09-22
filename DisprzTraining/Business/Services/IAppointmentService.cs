@@ -12,5 +12,6 @@ namespace DisprzTraining.Business.Services
         Task<Appointment> CreateAppointmentAsync(CreateAppointmentDTO appointmentDto);
         Task<Appointment> UpdateAppointmentAsync(int id, UpdateAppointmentDTO appointmentDto);
         Task<bool> DeleteAppointmentAsync(int id);
+        Task<IEnumerable<Appointment>> GetAppointmentsByUserIdAsync(int userId);
     }
 }

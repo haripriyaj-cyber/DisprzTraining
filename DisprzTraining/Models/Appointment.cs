@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DisprzTraining.Models
 {
@@ -26,5 +27,12 @@ namespace DisprzTraining.Models
         public DateTimeOffset CreatedAt { get; set; } = DateTime.UtcNow;
         
         public DateTimeOffset UpdatedAt { get; set; }
+        
+        // Foreign key for User
+        public int UserId { get; set; }
+        
+        // Make the navigation property nullable
+        [ForeignKey("UserId")]
+        public virtual User? User { get; set; }
     }
 }

@@ -49,5 +49,11 @@ namespace DisprzTraining.Models.DTOs
         /// <example>Conference Room A</example>
         [StringLength(200, ErrorMessage = "Location cannot exceed 200 characters")]
         public string Location { get; set; }
+        
+        /// <summary>
+        /// User ID of the appointment
+        /// </summary>
+        /// <example>1</example>
+        public int? UserId { get; set; }
     }
 }

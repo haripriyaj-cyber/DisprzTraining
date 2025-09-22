@@ -60,5 +60,11 @@ namespace DisprzTraining.Models.DTOs
         /// </summary>
         /// <example>2023-05-26T09:15:00Z</example>
         public DateTimeOffset? UpdatedAt { get; set; }
+        
+        /// <summary>
+        /// User identifier for the appointment
+        /// </summary>
+        /// <example>1</example>
+        public int UserId { get; set; }
     }
 }

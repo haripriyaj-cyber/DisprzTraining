@@ -10,9 +10,11 @@ namespace DisprzTraining.Utils
         {
             // Register repositories
             services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             
             // Register services
             services.AddScoped<IAppointmentService, AppointmentService>();
+            services.AddScoped<IUserService, UserService>();
             
             // Register AutoMapper
             services.AddAutoMapper(typeof(MappingProfile));

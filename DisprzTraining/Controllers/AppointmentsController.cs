@@ -97,6 +97,24 @@ namespace DisprzTraining.Controllers
         }
 
         /// <summary>
+        /// Retrieves all appointments for a specific user
+        /// </summary>
+        [HttpGet("user/{userId}")]
+        [SwaggerOperation(
+            Summary = "Get appointments by user ID",
+            Description = "Retrieves all appointments for a specific user",
+            OperationId = "GetAppointmentsByUserId",
+            Tags = new[] { "Appointments" }
+        )]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<AppointmentDTO>))]
+        public async Task<IActionResult> GetByUserId(int userId)
+        {
+            var appointments = await _appointmentService.GetAppointmentsByUserIdAsync(userId);
+            var appointmentDtos = _mapper.Map<IEnumerable<AppointmentDTO>>(appointments);
+            return Ok(appointmentDtos);
+        }
+
+        /// <summary>
         /// Creates a new appointment
         /// </summary>
         /// <remarks>
