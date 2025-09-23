@@ -32,20 +32,9 @@ builder.Services.AddSwaggerGen(c =>
     c.EnableAnnotations();
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Appointment Scheduler API",
+        Title = "API Documentation",
         Version = "v1",
-        Description = "API for managing calendar appointments and scheduling",
-        Contact = new OpenApiContact
-        {
-            Name = "Disprz Training Team",
-            Email = "training@disprz.com",
-            Url = new Uri("https://github.com/haripriyaj-cyber/DisprzTraining")
-        },
-        License = new OpenApiLicense
-        {
-            Name = "MIT License",
-            Url = new Uri("https://opensource.org/licenses/MIT")
-        }
+        Description = "API Documentation"
     });
     
     // Include XML comments

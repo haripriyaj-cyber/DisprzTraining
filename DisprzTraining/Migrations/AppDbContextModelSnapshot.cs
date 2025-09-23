@@ -64,7 +64,7 @@ namespace DisprzTraining.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Appointments");
+                    b.ToTable("Appointments", (string)null);
                 });
 
             modelBuilder.Entity("DisprzTraining.Models.User", b =>
@@ -99,7 +99,7 @@ namespace DisprzTraining.Migrations
                     b.HasIndex("Username")
                         .IsUnique();
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("DisprzTraining.Models.Appointment", b =>
