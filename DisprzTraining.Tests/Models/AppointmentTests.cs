@@ -1,4 +1,6 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using DisprzTraining.Models;
 using Xunit;
 
@@ -125,6 +127,65 @@ namespace DisprzTraining.Tests.Models
             Assert.Null(appointment.Description);
             Assert.Null(appointment.Location);
             Assert.False(appointment.IsAllDay);
+        }
+
+        [Fact]
+        public void Appointment_RequiredFields_ShouldHaveRequiredAttribute()
+        {
+            // Arrange & Act
+            var titleProperty = typeof(Appointment).GetProperty("Title");
+            var startTimeProperty = typeof(Appointment).GetProperty("StartTime");
+            var endTimeProperty = typeof(Appointment).GetProperty("EndTime");
+
+            // Assert
+            Assert.NotNull(titleProperty.GetCustomAttributes(typeof(RequiredAttribute), false).FirstOrDefault());
+            Assert.NotNull(startTimeProperty.GetCustomAttributes(typeof(RequiredAttribute), false).FirstOrDefault());
+            Assert.NotNull(endTimeProperty.GetCustomAttributes(typeof(RequiredAttribute), false).FirstOrDefault());
+        }
+
+        [Fact]
+        public void Appointment_UserRelationship_ShouldBeConfiguredCorrectly()
+        {
+            // Arrange
+            var appointment = new Appointment
+            {
+                Title = "Meeting with User",
+                StartTime = DateTimeOffset.UtcNow,
+                EndTime = DateTimeOffset.UtcNow.AddHours(1),
+                UserId = 42
+            };
+
+            // Act & Assert
+            Assert.Equal(42, appointment.UserId);
+            Assert.Null(appointment.User); // User is lazy-loaded, so it should be null initially
+        }
+
+        [Fact]
+        public void Appointment_DateTimeValidation_StartTimeShouldBeBeforeEndTime()
+        {
+            // This is a conceptual test - in a real app, you might have validation logic
+            // Arrange
+            var appointment = new Appointment
+            {
+                Title = "Invalid Meeting",
+                StartTime = DateTimeOffset.UtcNow.AddHours(2),
+                EndTime = DateTimeOffset.UtcNow.AddHours(1) // End time before start time
+            };
+
+            // Act & Assert
+            // In a real application, you would validate this in your service layer
+            // This test demonstrates that the model itself doesn't prevent invalid date ranges
+            Assert.True(appointment.EndTime < appointment.StartTime);
+        }
+
+        [Fact]
+        public void Appointment_KeyAttribute_IdShouldHaveKeyAttribute()
+        {
+            // Arrange & Act
+            var idProperty = typeof(Appointment).GetProperty("Id");
+
+            // Assert
+            Assert.NotNull(idProperty.GetCustomAttributes(typeof(System.ComponentModel.DataAnnotations.KeyAttribute), false).FirstOrDefault());
         }
     }
 }

@@ -88,7 +88,7 @@ namespace DisprzTraining.Tests.Services
             // Arrange
             var appointmentId = 999;
             _mockRepository.Setup(repo => repo.GetByIdAsync(appointmentId))
-                .ReturnsAsync((Appointment)null);
+                .ReturnsAsync((Appointment?)null);
 
             // Act & Assert
             await Assert.ThrowsAsync<KeyNotFoundException>(() => 
@@ -159,7 +159,8 @@ namespace DisprzTraining.Tests.Services
                 StartTime = DateTimeOffset.UtcNow.AddHours(1),
                 EndTime = DateTimeOffset.UtcNow.AddHours(2),
                 Description = "Test Description",
-                Location = "Test Location"
+                Location = "Test Location",
+                UserId = 1 // Add UserId
             };
 
             var existingAppointments = new List<Appointment>
@@ -171,16 +172,21 @@ namespace DisprzTraining.Tests.Services
                     StartTime = DateTimeOffset.UtcNow.AddMinutes(30), // Overlaps with new meeting
                     EndTime = DateTimeOffset.UtcNow.AddHours(1).AddMinutes(30),
                     Description = "Existing Description",
-                    Location = "Existing Location"
+                    Location = "Existing Location",
+                    UserId = 1 // Add UserId
                 }
             };
 
-            _mockRepository.Setup(repo => repo.GetAllAsync())
+            // Setup GetByUserIdAsync instead of GetAllAsync
+            _mockRepository.Setup(repo => repo.GetByUserIdAsync(It.IsAny<int>()))
                 .ReturnsAsync(existingAppointments);
 
             // Act & Assert
-            await Assert.ThrowsAsync<InvalidOperationException>(() => 
+            var exception = await Assert.ThrowsAsync<InvalidOperationException>(() => 
                 _service.CreateAppointmentAsync(createDto));
+            
+            // Verify the exception message contains the expected text
+            Assert.Contains("conflicts with existing appointment", exception.Message);
         }
 
         [Fact]
@@ -295,7 +301,8 @@ namespace DisprzTraining.Tests.Services
                 StartTime = DateTimeOffset.UtcNow,
                 EndTime = DateTimeOffset.UtcNow.AddHours(1),
                 Description = "Original Description",
-                Location = "Original Location"
+                Location = "Original Location",
+                UserId = 1 // Add UserId
             };
 
             var otherAppointment = new Appointment
@@ -305,7 +312,8 @@ namespace DisprzTraining.Tests.Services
                 StartTime = DateTimeOffset.UtcNow.AddHours(2).AddMinutes(30),
                 EndTime = DateTimeOffset.UtcNow.AddHours(3).AddMinutes(30),
                 Description = "Other Description",
-                Location = "Other Location"
+                Location = "Other Location",
+                UserId = 1 // Add UserId
             };
 
             var updateDto = new UpdateAppointmentDTO
@@ -320,12 +328,16 @@ namespace DisprzTraining.Tests.Services
             _mockRepository.Setup(repo => repo.GetByIdAsync(appointmentId))
                 .ReturnsAsync(existingAppointment);
 
-            _mockRepository.Setup(repo => repo.GetAllAsync())
+            // Setup GetByUserIdAsync instead of GetAllAsync
+            _mockRepository.Setup(repo => repo.GetByUserIdAsync(It.IsAny<int>()))
                 .ReturnsAsync(new List<Appointment> { existingAppointment, otherAppointment });
 
             // Act & Assert
-            await Assert.ThrowsAsync<InvalidOperationException>(() => 
+            var exception = await Assert.ThrowsAsync<InvalidOperationException>(() => 
                 _service.UpdateAppointmentAsync(appointmentId, updateDto));
+            
+            // Verify the exception message contains the expected text
+            Assert.Contains("conflicts with existing appointment", exception.Message);
         }
 
         [Fact]
@@ -368,6 +380,143 @@ namespace DisprzTraining.Tests.Services
             // Act & Assert
             await Assert.ThrowsAsync<KeyNotFoundException>(() => 
                 _service.DeleteAppointmentAsync(appointmentId));
+        }
+
+        [Fact]
+        public async Task GetAppointmentsByUserIdAsync_ShouldReturnUserAppointments()
+        {
+            // Arrange
+            var userId = 1;
+            var expectedAppointments = new List<Appointment>
+            {
+                new Appointment { 
+                    Id = 1, 
+                    Title = "User Meeting 1",
+                    StartTime = DateTimeOffset.UtcNow,
+                    EndTime = DateTimeOffset.UtcNow.AddHours(1),
+                    Description = "User Description 1",
+                    Location = "User Location 1",
+                    UserId = userId
+                },
+                new Appointment { 
+                    Id = 2, 
+                    Title = "User Meeting 2",
+                    StartTime = DateTimeOffset.UtcNow.AddDays(1),
+                    EndTime = DateTimeOffset.UtcNow.AddDays(1).AddHours(1),
+                    Description = "User Description 2",
+                    Location = "User Location 2",
+                    UserId = userId
+                }
+            };
+
+            _mockRepository.Setup(repo => repo.GetByUserIdAsync(userId))
+                .ReturnsAsync(expectedAppointments);
+
+            // Act
+            var result = await _service.GetAppointmentsByUserIdAsync(userId);
+
+            // Assert
+            Assert.Equal(expectedAppointments, result);
+            _mockRepository.Verify(repo => repo.GetByUserIdAsync(userId), Times.Once);
+        }
+
+        [Fact]
+        public async Task CreateAppointmentAsync_WithSameStartAndEndTime_ShouldThrowArgumentException()
+        {
+            // Arrange
+            var sameTime = DateTimeOffset.UtcNow.AddHours(1);
+            var createDto = new CreateAppointmentDTO
+            {
+                Title = "Invalid Meeting",
+                StartTime = sameTime,
+                EndTime = sameTime, // Same as start time
+                Description = "Test Description",
+                Location = "Test Location"
+            };
+
+            // Act & Assert
+            await Assert.ThrowsAsync<ArgumentException>(() => 
+                _service.CreateAppointmentAsync(createDto));
+        }
+
+        [Fact]
+        public async Task CreateAppointmentAsync_WithAllDayEvent_ShouldSetIsAllDayProperty()
+        {
+            // Arrange
+            var createDto = new CreateAppointmentDTO
+            {
+                Title = "All-Day Meeting",
+                StartTime = new DateTimeOffset(DateTime.Today),
+                EndTime = new DateTimeOffset(DateTime.Today.AddDays(1).AddTicks(-1)),
+                Description = "All-day event description",
+                Location = "Test Location",
+                IsAllDay = true
+            };
+
+            _mockRepository.Setup(repo => repo.GetByUserIdAsync(It.IsAny<int>()))
+                .ReturnsAsync(new List<Appointment>());
+
+            _mockRepository.Setup(repo => repo.CreateAsync(It.IsAny<Appointment>()))
+                .ReturnsAsync((Appointment a) => 
+                {
+                    a.Id = 1;
+                    return a;
+                });
+
+            // Act
+            var result = await _service.CreateAppointmentAsync(createDto);
+
+            // Assert
+            Assert.Equal(1, result.Id);
+            Assert.Equal(createDto.Title, result.Title);
+            Assert.True(result.IsAllDay);
+            _mockRepository.Verify(repo => repo.CreateAsync(It.Is<Appointment>(a => a.IsAllDay == true)), Times.Once);
+        }
+
+        [Fact]
+        public async Task UpdateAppointmentAsync_WithChangedUserId_ShouldNotChangeUserId()
+        {
+            // Arrange
+            var appointmentId = 1;
+            var originalUserId = 42;
+            var existingAppointment = new Appointment
+            {
+                Id = appointmentId,
+                Title = "Original Meeting",
+                StartTime = DateTimeOffset.UtcNow,
+                EndTime = DateTimeOffset.UtcNow.AddHours(1),
+                Description = "Original Description",
+                Location = "Original Location",
+                UserId = originalUserId
+            };
+
+            var updateDto = new UpdateAppointmentDTO
+            {
+                Title = "Updated Meeting",
+                StartTime = DateTimeOffset.UtcNow.AddHours(2),
+                EndTime = DateTimeOffset.UtcNow.AddHours(3),
+                Description = "Updated Description",
+                Location = "Updated Location"
+                // Note: UpdateAppointmentDTO typically doesn't include UserId
+            };
+
+            _mockRepository.Setup(repo => repo.GetByIdAsync(appointmentId))
+                .ReturnsAsync(existingAppointment);
+
+            _mockRepository.Setup(repo => repo.GetByUserIdAsync(originalUserId))
+                .ReturnsAsync(new List<Appointment> { existingAppointment });
+
+            _mockRepository.Setup(repo => repo.UpdateAsync(It.IsAny<Appointment>()))
+                .ReturnsAsync((Appointment a) => a);
+
+            // Act
+            var result = await _service.UpdateAppointmentAsync(appointmentId, updateDto);
+
+            // Assert
+            Assert.Equal(appointmentId, result.Id);
+            Assert.Equal(originalUserId, result.UserId); // UserId should not change
+            Assert.Equal(updateDto.Title, result.Title);
+            _mockRepository.Verify(repo => repo.UpdateAsync(It.Is<Appointment>(a => a.UserId == originalUserId)), Times.Once);
         }
     }
 }

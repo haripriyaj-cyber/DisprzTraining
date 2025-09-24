@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Calenderapp\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj": {}
+    "E:\\Calenderapp\\Disprztraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj": {}
   },
   "projects": {
-    "E:\\Calenderapp\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj": {
+    "E:\\Calenderapp\\Disprztraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj",
+        "projectUniqueName": "E:\\Calenderapp\\Disprztraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj",
         "projectName": "DisprzTraining.Tests",
-        "projectPath": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj",
+        "projectPath": "E:\\Calenderapp\\Disprztraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj",
         "packagesPath": "C:\\Users\\haripriya.j_disprz\\.nuget\\packages\\",
-        "outputPath": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining.Tests\\obj\\",
+        "outputPath": "E:\\Calenderapp\\Disprztraining\\DisprzTraining.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj": {
-                "projectPath": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj"
+              "E:\\Calenderapp\\Disprztraining\\DisprzTraining\\DisprzTraining.csproj": {
+                "projectPath": "E:\\Calenderapp\\Disprztraining\\DisprzTraining\\DisprzTraining.csproj"
               }
             }
           }
@@ -107,14 +107,14 @@
         }
       }
     },
-    "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj": {
+    "E:\\Calenderapp\\Disprztraining\\DisprzTraining\\DisprzTraining.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj",
+        "projectUniqueName": "E:\\Calenderapp\\Disprztraining\\DisprzTraining\\DisprzTraining.csproj",
         "projectName": "DisprzTraining",
-        "projectPath": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj",
+        "projectPath": "E:\\Calenderapp\\Disprztraining\\DisprzTraining\\DisprzTraining.csproj",
         "packagesPath": "C:\\Users\\haripriya.j_disprz\\.nuget\\packages\\",
-        "outputPath": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\obj\\",
+        "outputPath": "E:\\Calenderapp\\Disprztraining\\DisprzTraining\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

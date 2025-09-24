@@ -13356,8 +13356,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj": {
-              "projectPath": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj"
+            "E:\\Calenderapp\\Disprztraining\\DisprzTraining\\DisprzTraining.csproj": {
+              "projectPath": "E:\\Calenderapp\\Disprztraining\\DisprzTraining\\DisprzTraining.csproj"
             }
           }
         }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DisprzTraining.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+77d95c05c8e200e46f0c056194d92a466968376b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eacb09bc850cd9dd73045838157ce756b04eb800")]
 [assembly: System.Reflection.AssemblyProductAttribute("DisprzTraining.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DisprzTraining.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -168,5 +168,57 @@ namespace DisprzTraining.Tests.Mapping
             Assert.Equal(42, existingAppointment.Id);
             Assert.Equal(new DateTimeOffset(2023, 4, 25, 14, 30, 0, TimeSpan.Zero), existingAppointment.CreatedAt);
         }
+
+        [Fact]
+        public void Map_User_To_UserDTO_MapsCorrectly()
+        {
+            // Arrange
+            var user = new User
+            {
+                Id = 42,
+                Username = "testuser",
+                Password = "password123", // This should not be mapped to DTO
+                Email = "test@example.com",
+                FullName = "Test User",
+                CreatedAt = new DateTimeOffset(2023, 5, 25, 14, 30, 0, TimeSpan.Zero)
+            };
+
+            // Act
+            var userDto = _mapper.Map<UserDTO>(user);
+
+            // Assert
+            Assert.Equal(user.Id, userDto.Id);
+            Assert.Equal(user.Username, userDto.Username);
+            Assert.Equal(user.Email, userDto.Email);
+            Assert.Equal(user.FullName, userDto.FullName);
+            // Password should not be mapped to DTO
+            Assert.Null(userDto.GetType().GetProperty("Password"));
+        }
+
+        [Fact]
+        public void Map_RegisterDTO_To_User_MapsCorrectly()
+        {
+            // Arrange
+            var registerDto = new RegisterDTO
+            {
+                Username = "newuser",
+                Password = "newpassword",
+                Email = "new@example.com",
+                FullName = "New User"
+            };
+
+            // Act
+            var user = _mapper.Map<User>(registerDto);
+
+            // Assert
+            Assert.Equal(registerDto.Username, user.Username);
+            Assert.Equal(registerDto.Password, user.Password);
+            Assert.Equal(registerDto.Email, user.Email);
+            Assert.Equal(registerDto.FullName, user.FullName);
+            
+            // Default values should be set
+            Assert.Equal(0, user.Id); // Default int value
+            Assert.NotEqual(default, user.CreatedAt); // Should have a default value
+        }
     }
 }
