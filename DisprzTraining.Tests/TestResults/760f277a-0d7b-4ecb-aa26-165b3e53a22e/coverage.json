@@ -1,0 +1,1470 @@
+{
+  "DisprzTraining.dll": {
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Program.cs": {
+      "Program": {
+        "System.Void Program::<Main>$(System.String[])": {
+          "Lines": {
+            "9": 0,
+            "12": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "25": 0,
+            "26": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "65": 0,
+            "67": 0,
+            "70": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "90": 0,
+            "91": 0,
+            "93": 0
+          },
+          "Branches": [
+            {
+              "Line": 73,
+              "Offset": 303,
+              "EndOffset": 305,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 73,
+              "Offset": 303,
+              "EndOffset": 360,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 107,
+              "EndOffset": 109,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 107,
+              "EndOffset": 120,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 15,
+              "EndOffset": 17,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 15,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Models/Mapping/MappingProfile.cs": {
+      "DisprzTraining.Utils.MappingProfile": {
+        "System.Void DisprzTraining.Utils.MappingProfile::.ctor()": {
+          "Lines": {
+            "10": 37,
+            "11": 37,
+            "13": 37,
+            "16": 37,
+            "17": 37,
+            "18": 37,
+            "19": 37,
+            "20": 74,
+            "23": 37,
+            "24": 37,
+            "25": 37,
+            "26": 37,
+            "27": 37,
+            "28": 74,
+            "31": 37,
+            "34": 37,
+            "35": 37,
+            "36": 37,
+            "37": 74,
+            "38": 37
+          },
+          "Branches": []
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Utils/ConfigureDependenciesExtension.cs": {
+      "DisprzTraining.Utils.ConfigureDependenciesExtension": {
+        "System.Void DisprzTraining.Utils.ConfigureDependenciesExtension::ConfigureDependencyInjections(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
+          "Lines": {
+            "10": 0,
+            "12": 0,
+            "13": 0,
+            "16": 0,
+            "17": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Models/Appointment.cs": {
+      "DisprzTraining.Models.Appointment": {
+        "System.Int32 DisprzTraining.Models.Appointment::get_Id()": {
+          "Lines": {
+            "10": 50
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.Appointment::get_Title()": {
+          "Lines": {
+            "13": 88
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset DisprzTraining.Models.Appointment::get_StartTime()": {
+          "Lines": {
+            "16": 68
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset DisprzTraining.Models.Appointment::get_EndTime()": {
+          "Lines": {
+            "19": 67
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.Appointment::get_Description()": {
+          "Lines": {
+            "21": 62
+          },
+          "Branches": []
+        },
+        "System.Boolean DisprzTraining.Models.Appointment::get_IsAllDay()": {
+          "Lines": {
+            "23": 30
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.Appointment::get_Location()": {
+          "Lines": {
+            "25": 60
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset DisprzTraining.Models.Appointment::get_CreatedAt()": {
+          "Lines": {
+            "27": 80
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset DisprzTraining.Models.Appointment::get_UpdatedAt()": {
+          "Lines": {
+            "29": 19
+          },
+          "Branches": []
+        },
+        "System.Int32 DisprzTraining.Models.Appointment::get_UserId()": {
+          "Lines": {
+            "32": 32
+          },
+          "Branches": []
+        },
+        "DisprzTraining.Models.User DisprzTraining.Models.Appointment::get_User()": {
+          "Lines": {
+            "36": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Models/User.cs": {
+      "DisprzTraining.Models.User": {
+        "System.Int32 DisprzTraining.Models.User::get_Id()": {
+          "Lines": {
+            "10": 18
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.User::get_Username()": {
+          "Lines": {
+            "13": 26
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.User::get_Password()": {
+          "Lines": {
+            "16": 14
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.User::get_Email()": {
+          "Lines": {
+            "18": 22
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.User::get_FullName()": {
+          "Lines": {
+            "20": 17
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset DisprzTraining.Models.User::get_CreatedAt()": {
+          "Lines": {
+            "22": 25
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.ICollection`1<DisprzTraining.Models.Appointment> DisprzTraining.Models.User::get_Appointments()": {
+          "Lines": {
+            "25": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Models/DTOs/AppointmentDTO.cs": {
+      "DisprzTraining.Models.DTOs.AppointmentDTO": {
+        "System.Int32 DisprzTraining.Models.DTOs.AppointmentDTO::get_Id()": {
+          "Lines": {
+            "14": 10
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.DTOs.AppointmentDTO::get_Title()": {
+          "Lines": {
+            "20": 10
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset DisprzTraining.Models.DTOs.AppointmentDTO::get_StartTime()": {
+          "Lines": {
+            "26": 7
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset DisprzTraining.Models.DTOs.AppointmentDTO::get_EndTime()": {
+          "Lines": {
+            "32": 7
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.DTOs.AppointmentDTO::get_Description()": {
+          "Lines": {
+            "38": 8
+          },
+          "Branches": []
+        },
+        "System.Boolean DisprzTraining.Models.DTOs.AppointmentDTO::get_IsAllDay()": {
+          "Lines": {
+            "44": 7
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.DTOs.AppointmentDTO::get_Location()": {
+          "Lines": {
+            "50": 7
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset DisprzTraining.Models.DTOs.AppointmentDTO::get_CreatedAt()": {
+          "Lines": {
+            "56": 7
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTimeOffset> DisprzTraining.Models.DTOs.AppointmentDTO::get_UpdatedAt()": {
+          "Lines": {
+            "62": 7
+          },
+          "Branches": []
+        },
+        "System.Int32 DisprzTraining.Models.DTOs.AppointmentDTO::get_UserId()": {
+          "Lines": {
+            "68": 6
+          },
+          "Branches": []
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Models/DTOs/CreateAppointmentDTO.cs": {
+      "DisprzTraining.Models.DTOs.CreateAppointmentDTO": {
+        "System.String DisprzTraining.Models.DTOs.CreateAppointmentDTO::get_Title()": {
+          "Lines": {
+            "17": 16
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset DisprzTraining.Models.DTOs.CreateAppointmentDTO::get_StartTime()": {
+          "Lines": {
+            "24": 24
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset DisprzTraining.Models.DTOs.CreateAppointmentDTO::get_EndTime()": {
+          "Lines": {
+            "31": 24
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.DTOs.CreateAppointmentDTO::get_Description()": {
+          "Lines": {
+            "38": 15
+          },
+          "Branches": []
+        },
+        "System.Boolean DisprzTraining.Models.DTOs.CreateAppointmentDTO::get_IsAllDay()": {
+          "Lines": {
+            "44": 6
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.DTOs.CreateAppointmentDTO::get_Location()": {
+          "Lines": {
+            "51": 15
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> DisprzTraining.Models.DTOs.CreateAppointmentDTO::get_UserId()": {
+          "Lines": {
+            "57": 7
+          },
+          "Branches": []
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Models/DTOs/LoginDTO.cs": {
+      "DisprzTraining.Models.DTOs.LoginDTO": {
+        "System.String DisprzTraining.Models.DTOs.LoginDTO::get_Username()": {
+          "Lines": {
+            "15": 17
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.DTOs.LoginDTO::get_Password()": {
+          "Lines": {
+            "22": 8
+          },
+          "Branches": []
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Models/DTOs/RegisterDTO.cs": {
+      "DisprzTraining.Models.DTOs.RegisterDTO": {
+        "System.String DisprzTraining.Models.DTOs.RegisterDTO::get_Username()": {
+          "Lines": {
+            "16": 19
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.DTOs.RegisterDTO::get_Password()": {
+          "Lines": {
+            "24": 8
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.DTOs.RegisterDTO::get_Email()": {
+          "Lines": {
+            "32": 10
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.DTOs.RegisterDTO::get_FullName()": {
+          "Lines": {
+            "39": 10
+          },
+          "Branches": []
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Models/DTOs/UpdateAppointmentDTO.cs": {
+      "DisprzTraining.Models.DTOs.UpdateAppointmentDTO": {
+        "System.String DisprzTraining.Models.DTOs.UpdateAppointmentDTO::get_Title()": {
+          "Lines": {
+            "17": 21
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset DisprzTraining.Models.DTOs.UpdateAppointmentDTO::get_StartTime()": {
+          "Lines": {
+            "24": 28
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset DisprzTraining.Models.DTOs.UpdateAppointmentDTO::get_EndTime()": {
+          "Lines": {
+            "31": 28
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.DTOs.UpdateAppointmentDTO::get_Description()": {
+          "Lines": {
+            "38": 20
+          },
+          "Branches": []
+        },
+        "System.Boolean DisprzTraining.Models.DTOs.UpdateAppointmentDTO::get_IsAllDay()": {
+          "Lines": {
+            "44": 8
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.DTOs.UpdateAppointmentDTO::get_Location()": {
+          "Lines": {
+            "51": 19
+          },
+          "Branches": []
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Models/DTOs/UserDTO.cs": {
+      "DisprzTraining.Models.DTOs.UserDTO": {
+        "System.Int32 DisprzTraining.Models.DTOs.UserDTO::get_Id()": {
+          "Lines": {
+            "13": 18
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.DTOs.UserDTO::get_Username()": {
+          "Lines": {
+            "18": 17
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.DTOs.UserDTO::get_Email()": {
+          "Lines": {
+            "23": 11
+          },
+          "Branches": []
+        },
+        "System.String DisprzTraining.Models.DTOs.UserDTO::get_FullName()": {
+          "Lines": {
+            "28": 9
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset DisprzTraining.Models.DTOs.UserDTO::get_CreatedAt()": {
+          "Lines": {
+            "33": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/DataAccess/AppDbContext.cs": {
+      "DisprzTraining.DataAccess.AppDbContext": {
+        "Microsoft.EntityFrameworkCore.DbSet`1<DisprzTraining.Models.Appointment> DisprzTraining.DataAccess.AppDbContext::get_Appointments()": {
+          "Lines": {
+            "13": 62
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<DisprzTraining.Models.User> DisprzTraining.DataAccess.AppDbContext::get_Users()": {
+          "Lines": {
+            "14": 41
+          },
+          "Branches": []
+        },
+        "System.Void DisprzTraining.DataAccess.AppDbContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "17": 1,
+            "18": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "25": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1
+          },
+          "Branches": []
+        },
+        "System.Void DisprzTraining.DataAccess.AppDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<DisprzTraining.DataAccess.AppDbContext>)": {
+          "Lines": {
+            "9": 31,
+            "10": 31,
+            "11": 31
+          },
+          "Branches": []
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/DataAccess/Repositories/AppointmentRepository.cs": {
+      "DisprzTraining.DataAccess.Repositories.AppointmentRepository": {
+        "System.Void DisprzTraining.DataAccess.Repositories.AppointmentRepository::.ctor(DisprzTraining.DataAccess.AppDbContext)": {
+          "Lines": {
+            "13": 11,
+            "14": 11,
+            "15": 11,
+            "16": 11
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.DataAccess.Repositories.AppointmentRepository/<CreateAsync>d__4": {
+        "System.Void DisprzTraining.DataAccess.Repositories.AppointmentRepository/<CreateAsync>d__4::MoveNext()": {
+          "Lines": {
+            "29": 3,
+            "30": 3,
+            "31": 3,
+            "32": 3,
+            "33": 3
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.DataAccess.Repositories.AppointmentRepository/<DeleteAsync>d__6": {
+        "System.Void DisprzTraining.DataAccess.Repositories.AppointmentRepository/<DeleteAsync>d__6::MoveNext()": {
+          "Lines": {
+            "44": 2,
+            "45": 2,
+            "46": 2,
+            "47": 1,
+            "49": 1,
+            "50": 1,
+            "51": 1,
+            "52": 2
+          },
+          "Branches": [
+            {
+              "Line": 46,
+              "Offset": 198,
+              "EndOffset": 200,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 46,
+              "Offset": 198,
+              "EndOffset": 207,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "DisprzTraining.DataAccess.Repositories.AppointmentRepository/<GetAllAsync>d__2": {
+        "System.Void DisprzTraining.DataAccess.Repositories.AppointmentRepository/<GetAllAsync>d__2::MoveNext()": {
+          "Lines": {
+            "19": 3,
+            "20": 3,
+            "21": 3
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.DataAccess.Repositories.AppointmentRepository/<GetByIdAsync>d__3": {
+        "System.Void DisprzTraining.DataAccess.Repositories.AppointmentRepository/<GetByIdAsync>d__3::MoveNext()": {
+          "Lines": {
+            "24": 3,
+            "25": 3,
+            "26": 3
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.DataAccess.Repositories.AppointmentRepository/<GetByUserIdAsync>d__7": {
+        "System.Void DisprzTraining.DataAccess.Repositories.AppointmentRepository/<GetByUserIdAsync>d__7::MoveNext()": {
+          "Lines": {
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.DataAccess.Repositories.AppointmentRepository/<UpdateAsync>d__5": {
+        "System.Void DisprzTraining.DataAccess.Repositories.AppointmentRepository/<UpdateAsync>d__5::MoveNext()": {
+          "Lines": {
+            "36": 2,
+            "37": 2,
+            "38": 2,
+            "39": 2,
+            "40": 2,
+            "41": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/DataAccess/Repositories/UserRepository.cs": {
+      "DisprzTraining.DataAccess.Repositories.UserRepository": {
+        "System.Void DisprzTraining.DataAccess.Repositories.UserRepository::.ctor(DisprzTraining.DataAccess.AppDbContext)": {
+          "Lines": {
+            "11": 5,
+            "12": 5,
+            "13": 5,
+            "14": 5
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.DataAccess.Repositories.UserRepository/<CreateAsync>d__4": {
+        "System.Void DisprzTraining.DataAccess.Repositories.UserRepository/<CreateAsync>d__4::MoveNext()": {
+          "Lines": {
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.DataAccess.Repositories.UserRepository/<GetByIdAsync>d__2": {
+        "System.Void DisprzTraining.DataAccess.Repositories.UserRepository/<GetByIdAsync>d__2::MoveNext()": {
+          "Lines": {
+            "17": 1,
+            "18": 1,
+            "19": 1
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.DataAccess.Repositories.UserRepository/<GetByUsernameAsync>d__3": {
+        "System.Void DisprzTraining.DataAccess.Repositories.UserRepository/<GetByUsernameAsync>d__3::MoveNext()": {
+          "Lines": {
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "25": 1
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.DataAccess.Repositories.UserRepository/<UsernameExistsAsync>d__5": {
+        "System.Void DisprzTraining.DataAccess.Repositories.UserRepository/<UsernameExistsAsync>d__5::MoveNext()": {
+          "Lines": {
+            "35": 2,
+            "36": 2,
+            "37": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Controllers/AppointmentsController.cs": {
+      "DisprzTraining.Controllers.AppointmentsController": {
+        "System.Void DisprzTraining.Controllers.AppointmentsController::.ctor(DisprzTraining.Business.Services.IAppointmentService,AutoMapper.IMapper)": {
+          "Lines": {
+            "31": 15,
+            "32": 15,
+            "33": 15,
+            "34": 15,
+            "35": 15
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.Controllers.AppointmentsController/<Create>d__6": {
+        "System.Void DisprzTraining.Controllers.AppointmentsController/<Create>d__6::MoveNext()": {
+          "Lines": {
+            "150": 4,
+            "152": 4,
+            "153": 1,
+            "154": 1,
+            "158": 3,
+            "159": 3,
+            "160": 1,
+            "161": 1,
+            "163": 1,
+            "164": 1,
+            "166": 1,
+            "168": 1,
+            "169": 1,
+            "171": 1,
+            "173": 4
+          },
+          "Branches": [
+            {
+              "Line": 152,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 152,
+              "Offset": 36,
+              "EndOffset": 67,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            }
+          ]
+        }
+      },
+      "DisprzTraining.Controllers.AppointmentsController/<Delete>d__8": {
+        "System.Void DisprzTraining.Controllers.AppointmentsController/<Delete>d__8::MoveNext()": {
+          "Lines": {
+            "264": 2,
+            "266": 2,
+            "267": 2,
+            "268": 1,
+            "270": 1,
+            "271": 1,
+            "272": 1,
+            "274": 2
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.Controllers.AppointmentsController/<GetAll>d__3": {
+        "System.Void DisprzTraining.Controllers.AppointmentsController/<GetAll>d__3::MoveNext()": {
+          "Lines": {
+            "57": 2,
+            "58": 2,
+            "59": 2,
+            "60": 2,
+            "61": 2
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.Controllers.AppointmentsController/<GetById>d__4": {
+        "System.Void DisprzTraining.Controllers.AppointmentsController/<GetById>d__4::MoveNext()": {
+          "Lines": {
+            "86": 2,
+            "88": 2,
+            "89": 2,
+            "90": 1,
+            "91": 1,
+            "93": 1,
+            "94": 1,
+            "95": 1,
+            "97": 2
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.Controllers.AppointmentsController/<GetByUserId>d__5": {
+        "System.Void DisprzTraining.Controllers.AppointmentsController/<GetByUserId>d__5::MoveNext()": {
+          "Lines": {
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.Controllers.AppointmentsController/<Update>d__7": {
+        "System.Void DisprzTraining.Controllers.AppointmentsController/<Update>d__7::MoveNext()": {
+          "Lines": {
+            "211": 5,
+            "213": 5,
+            "214": 1,
+            "215": 1,
+            "219": 4,
+            "220": 4,
+            "221": 1,
+            "222": 1,
+            "224": 1,
+            "225": 1,
+            "227": 1,
+            "229": 1,
+            "230": 1,
+            "232": 1,
+            "234": 1,
+            "235": 1,
+            "237": 1,
+            "239": 5
+          },
+          "Branches": [
+            {
+              "Line": 213,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 213,
+              "Offset": 36,
+              "EndOffset": 67,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            }
+          ]
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Controllers/OpenApiController.cs": {
+      "DisprzTraining.Controllers.OpenApiController": {
+        "Microsoft.AspNetCore.Mvc.IActionResult DisprzTraining.Controllers.OpenApiController::GetOpenApiYaml()": {
+          "Lines": {
+            "35": 0,
+            "36": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "42": 0,
+            "44": 0,
+            "45": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.AspNetCore.Mvc.IActionResult DisprzTraining.Controllers.OpenApiController::GetOpenApiJson()": {
+          "Lines": {
+            "54": 0,
+            "55": 0,
+            "57": 0,
+            "58": 0
+          },
+          "Branches": []
+        },
+        "System.Void DisprzTraining.Controllers.OpenApiController::.ctor(Swashbuckle.AspNetCore.Swagger.ISwaggerProvider)": {
+          "Lines": {
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Controllers/UsersController.cs": {
+      "DisprzTraining.Controllers.UsersController": {
+        "System.Void DisprzTraining.Controllers.UsersController::.ctor(DisprzTraining.Business.Services.IUserService,AutoMapper.IMapper)": {
+          "Lines": {
+            "21": 8,
+            "22": 8,
+            "23": 8,
+            "24": 8,
+            "25": 8
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.Controllers.UsersController/<GetById>d__5": {
+        "System.Void DisprzTraining.Controllers.UsersController/<GetById>d__5::MoveNext()": {
+          "Lines": {
+            "101": 2,
+            "103": 2,
+            "104": 2,
+            "105": 1,
+            "107": 1,
+            "108": 1,
+            "109": 1,
+            "111": 2
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.Controllers.UsersController/<Login>d__4": {
+        "System.Void DisprzTraining.Controllers.UsersController/<Login>d__4::MoveNext()": {
+          "Lines": {
+            "71": 3,
+            "72": 3,
+            "73": 1,
+            "74": 1,
+            "78": 2,
+            "79": 2,
+            "80": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "86": 3
+          },
+          "Branches": [
+            {
+              "Line": 72,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 72,
+              "Offset": 36,
+              "EndOffset": 67,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "DisprzTraining.Controllers.UsersController/<Register>d__3": {
+        "System.Void DisprzTraining.Controllers.UsersController/<Register>d__3::MoveNext()": {
+          "Lines": {
+            "41": 3,
+            "42": 3,
+            "43": 1,
+            "44": 1,
+            "48": 2,
+            "49": 2,
+            "50": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "56": 3
+          },
+          "Branches": [
+            {
+              "Line": 42,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 42,
+              "Offset": 36,
+              "EndOffset": 67,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Business/Services/AppointmentService.cs": {
+      "DisprzTraining.Business.Services.AppointmentService": {
+        "System.Void DisprzTraining.Business.Services.AppointmentService::.ctor(DisprzTraining.DataAccess.Repositories.IAppointmentRepository)": {
+          "Lines": {
+            "15": 16,
+            "16": 16,
+            "17": 16,
+            "18": 16
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.Business.Services.AppointmentService/<>c__DisplayClass8_0": {
+        "System.Boolean DisprzTraining.Business.Services.AppointmentService/<>c__DisplayClass8_0::<CheckForOverlappingAppointments>b__0(DisprzTraining.Models.Appointment)": {
+          "Lines": {
+            "112": 4
+          },
+          "Branches": [
+            {
+              "Line": 112,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 112,
+              "Offset": 11,
+              "EndOffset": 48,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Boolean DisprzTraining.Business.Services.AppointmentService/<>c__DisplayClass8_0::<CheckForOverlappingAppointments>b__1(DisprzTraining.Models.Appointment)": {
+          "Lines": {
+            "118": 8,
+            "119": 8,
+            "120": 8,
+            "121": 8,
+            "122": 8
+          },
+          "Branches": [
+            {
+              "Line": 118,
+              "Offset": 17,
+              "EndOffset": 19,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 118,
+              "Offset": 17,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 118,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 118,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 118,
+              "Offset": 55,
+              "EndOffset": 76,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 118,
+              "Offset": 74,
+              "EndOffset": 76,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 118,
+              "Offset": 93,
+              "EndOffset": 95,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 118,
+              "Offset": 93,
+              "EndOffset": 114,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 118,
+              "Offset": 36,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 118,
+              "Offset": 74,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "DisprzTraining.Business.Services.AppointmentService/<CheckForOverlappingAppointments>d__8": {
+        "System.Void DisprzTraining.Business.Services.AppointmentService/<CheckForOverlappingAppointments>d__8::MoveNext()": {
+          "Lines": {
+            "106": 6,
+            "108": 6,
+            "111": 6,
+            "113": 6,
+            "116": 6,
+            "117": 6,
+            "124": 6,
+            "125": 2,
+            "126": 2,
+            "127": 2,
+            "128": 2,
+            "130": 4
+          },
+          "Branches": [
+            {
+              "Line": 124,
+              "Offset": 306,
+              "EndOffset": 311,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 124,
+              "Offset": 306,
+              "EndOffset": 454,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            }
+          ]
+        }
+      },
+      "DisprzTraining.Business.Services.AppointmentService/<CreateAppointmentAsync>d__5": {
+        "System.Void DisprzTraining.Business.Services.AppointmentService/<CreateAppointmentAsync>d__5::MoveNext()": {
+          "Lines": {
+            "40": 5,
+            "42": 5,
+            "43": 2,
+            "46": 3,
+            "48": 2,
+            "49": 2,
+            "50": 2,
+            "51": 2,
+            "52": 2,
+            "53": 2,
+            "54": 2,
+            "55": 2,
+            "56": 2,
+            "57": 2,
+            "58": 2,
+            "60": 2,
+            "61": 2
+          },
+          "Branches": [
+            {
+              "Line": 42,
+              "Offset": 58,
+              "EndOffset": 60,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 42,
+              "Offset": 58,
+              "EndOffset": 71,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            }
+          ]
+        }
+      },
+      "DisprzTraining.Business.Services.AppointmentService/<DeleteAppointmentAsync>d__7": {
+        "System.Void DisprzTraining.Business.Services.AppointmentService/<DeleteAppointmentAsync>d__7::MoveNext()": {
+          "Lines": {
+            "89": 2,
+            "90": 2,
+            "91": 2,
+            "92": 1,
+            "94": 1,
+            "95": 1
+          },
+          "Branches": [
+            {
+              "Line": 91,
+              "Offset": 175,
+              "EndOffset": 177,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 91,
+              "Offset": 175,
+              "EndOffset": 240,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "DisprzTraining.Business.Services.AppointmentService/<GetAllAppointmentsAsync>d__2": {
+        "System.Void DisprzTraining.Business.Services.AppointmentService/<GetAllAppointmentsAsync>d__2::MoveNext()": {
+          "Lines": {
+            "21": 1,
+            "22": 1,
+            "23": 1
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.Business.Services.AppointmentService/<GetAppointmentByIdAsync>d__3": {
+        "System.Void DisprzTraining.Business.Services.AppointmentService/<GetAppointmentByIdAsync>d__3::MoveNext()": {
+          "Lines": {
+            "26": 2,
+            "27": 2,
+            "28": 2,
+            "29": 1,
+            "31": 1,
+            "32": 1
+          },
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 164,
+              "EndOffset": 166,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 28,
+              "Offset": 164,
+              "EndOffset": 229,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "DisprzTraining.Business.Services.AppointmentService/<GetAppointmentsByUserIdAsync>d__4": {
+        "System.Void DisprzTraining.Business.Services.AppointmentService/<GetAppointmentsByUserIdAsync>d__4::MoveNext()": {
+          "Lines": {
+            "35": 1,
+            "36": 1,
+            "37": 1
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.Business.Services.AppointmentService/<UpdateAppointmentAsync>d__6": {
+        "System.Void DisprzTraining.Business.Services.AppointmentService/<UpdateAppointmentAsync>d__6::MoveNext()": {
+          "Lines": {
+            "64": 5,
+            "66": 5,
+            "67": 1,
+            "69": 4,
+            "70": 4,
+            "71": 1,
+            "74": 3,
+            "77": 2,
+            "78": 2,
+            "79": 2,
+            "80": 2,
+            "81": 2,
+            "82": 2,
+            "83": 2,
+            "85": 2,
+            "86": 2
+          },
+          "Branches": [
+            {
+              "Line": 66,
+              "Offset": 72,
+              "EndOffset": 74,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 66,
+              "Offset": 72,
+              "EndOffset": 85,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            },
+            {
+              "Line": 70,
+              "Offset": 235,
+              "EndOffset": 237,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 70,
+              "Offset": 235,
+              "EndOffset": 300,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            }
+          ]
+        }
+      }
+    },
+    "https://raw.githubusercontent.com/haripriyaj-cyber/DisprzTraining/413806afbbbcbdd6d85aeb18b0bbdee972ba3bec/DisprzTraining/Business/Services/UserService.cs": {
+      "DisprzTraining.Business.Services.UserService": {
+        "System.Void DisprzTraining.Business.Services.UserService::.ctor(DisprzTraining.DataAccess.Repositories.IUserRepository,AutoMapper.IMapper)": {
+          "Lines": {
+            "15": 7,
+            "16": 7,
+            "17": 7,
+            "18": 7,
+            "19": 7
+          },
+          "Branches": []
+        }
+      },
+      "DisprzTraining.Business.Services.UserService/<GetUserByIdAsync>d__5": {
+        "System.Void DisprzTraining.Business.Services.UserService/<GetUserByIdAsync>d__5::MoveNext()": {
+          "Lines": {
+            "57": 2,
+            "58": 2,
+            "59": 2,
+            "60": 1,
+            "61": 1,
+            "64": 1,
+            "65": 1
+          },
+          "Branches": [
+            {
+              "Line": 59,
+              "Offset": 164,
+              "EndOffset": 166,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 59,
+              "Offset": 164,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "DisprzTraining.Business.Services.UserService/<LoginAsync>d__4": {
+        "System.Void DisprzTraining.Business.Services.UserService/<LoginAsync>d__4::MoveNext()": {
+          "Lines": {
+            "44": 3,
+            "45": 3,
+            "48": 3,
+            "49": 2,
+            "50": 2,
+            "53": 1,
+            "54": 1
+          },
+          "Branches": [
+            {
+              "Line": 48,
+              "Offset": 162,
+              "EndOffset": 164,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 48,
+              "Offset": 162,
+              "EndOffset": 193,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 48,
+              "Offset": 198,
+              "EndOffset": 200,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 48,
+              "Offset": 198,
+              "EndOffset": 212,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "DisprzTraining.Business.Services.UserService/<RegisterAsync>d__3": {
+        "System.Void DisprzTraining.Business.Services.UserService/<RegisterAsync>d__3::MoveNext()": {
+          "Lines": {
+            "22": 2,
+            "24": 2,
+            "25": 1,
+            "26": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 157,
+              "EndOffset": 159,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 24,
+              "Offset": 157,
+              "EndOffset": 192,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    }
+  }
+}

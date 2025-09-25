@@ -1,5 +1,4 @@
 E:\Calenderapp\DisprzTraining\DisprzTraining.Tests\bin\Debug\net9.0\.msCoverageSourceRootsMapping_DisprzTraining.Tests
-E:\Calenderapp\DisprzTraining\DisprzTraining.Tests\bin\Debug\net9.0\CoverletSourceRootsMapping
 E:\Calenderapp\DisprzTraining\DisprzTraining.Tests\obj\Debug\net9.0\DisprzTraining.Tests.csproj.AssemblyReference.cache
 E:\Calenderapp\DisprzTraining\DisprzTraining.Tests\obj\Debug\net9.0\DisprzTraining.Tests.GeneratedMSBuildEditorConfig.editorconfig
 E:\Calenderapp\DisprzTraining\DisprzTraining.Tests\obj\Debug\net9.0\DisprzTraining.Tests.AssemblyInfoInputs.cache
@@ -343,3 +342,4 @@ E:\Calenderapp\DisprzTraining\DisprzTraining.Tests\obj\Debug\net9.0\refint\Dispr
 E:\Calenderapp\DisprzTraining\DisprzTraining.Tests\obj\Debug\net9.0\DisprzTraining.Tests.pdb
 E:\Calenderapp\DisprzTraining\DisprzTraining.Tests\obj\Debug\net9.0\DisprzTraining.Tests.genruntimeconfig.cache
 E:\Calenderapp\DisprzTraining\DisprzTraining.Tests\obj\Debug\net9.0\ref\DisprzTraining.Tests.dll
+E:\Calenderapp\DisprzTraining\DisprzTraining.Tests\bin\Debug\net9.0\CoverletSourceRootsMapping_DisprzTraining.Tests
