@@ -1,36 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Malcom\\ReportBuilder\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj": {}
+    "E:\\Calenderapp\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj": {}
   },
   "projects": {
-    "D:\\Malcom\\ReportBuilder\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj": {
+    "E:\\Calenderapp\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Malcom\\ReportBuilder\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj",
+        "projectUniqueName": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj",
         "projectName": "DisprzTraining.Tests",
-        "projectPath": "D:\\Malcom\\ReportBuilder\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj",
-        "packagesPath": "C:\\Users\\Client\\.nuget\\packages\\",
-        "outputPath": "D:\\Malcom\\ReportBuilder\\DisprzTraining\\DisprzTraining.Tests\\obj\\",
+        "projectPath": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj",
+        "packagesPath": "C:\\Users\\haripriya.j_disprz\\.nuget\\packages\\",
+        "outputPath": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining.Tests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Client\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\haripriya.j_disprz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net9.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://heuristix.pkgs.visualstudio.com/_packaging/DisprzFeed/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Malcom\\ReportBuilder\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj": {
-                "projectPath": "D:\\Malcom\\ReportBuilder\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj"
+              "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj": {
+                "projectPath": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj"
               }
             }
           }
@@ -39,25 +42,57 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.3.2, )"
+              "version": "[17.11.1, )"
+            },
+            "Microsoft.OpenApi": {
+              "target": "Package",
+              "version": "[2.3.2, )"
             },
             "Moq": {
               "target": "Package",
-              "version": "[4.18.3, )"
+              "version": "[4.20.72, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[6.0.4, )"
+            },
+            "coverlet.msbuild": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.4, )"
             },
             "xunit": {
               "target": "Package",
@@ -86,34 +121,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Malcom\\ReportBuilder\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj": {
+    "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Malcom\\ReportBuilder\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj",
+        "projectUniqueName": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj",
         "projectName": "DisprzTraining",
-        "projectPath": "D:\\Malcom\\ReportBuilder\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj",
-        "packagesPath": "C:\\Users\\Client\\.nuget\\packages\\",
-        "outputPath": "D:\\Malcom\\ReportBuilder\\DisprzTraining\\DisprzTraining\\obj\\",
+        "projectPath": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj",
+        "packagesPath": "C:\\Users\\haripriya.j_disprz\\.nuget\\packages\\",
+        "outputPath": "E:\\Calenderapp\\DisprzTraining\\DisprzTraining\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Client\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\haripriya.j_disprz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net9.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://heuristix.pkgs.visualstudio.com/_packaging/DisprzFeed/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -121,15 +159,43 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "Microsoft.OpenApi.Readers": {
+              "target": "Package",
+              "version": "[1.6.25, )"
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
@@ -137,11 +203,19 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[9.0.4, )"
+            },
+            "Swashbuckle.AspNetCore.Annotations": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             }
           },
           "imports": [
@@ -163,7 +237,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

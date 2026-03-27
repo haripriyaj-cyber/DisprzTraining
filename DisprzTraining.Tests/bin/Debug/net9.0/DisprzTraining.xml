@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DisprzTraining</name>
+    </assembly>
+    <members>
+        <member name="M:DisprzTraining.Business.Services.AppointmentService.CheckForOverlappingAppointments(System.DateTimeOffset,System.DateTimeOffset,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Checks if there are any overlapping appointments for the given time range
+            </summary>
+            <param name="startTime">Start time of the appointment</param>
+            <param name="endTime">End time of the appointment</param>
+            <param name="excludeAppointmentId">Optional ID of appointment to exclude from the check (for updates)</param>
+            <returns>Task</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown when there's a conflict</exception>
+        </member>
+        <member name="T:DisprzTraining.Controllers.AppointmentsController">
+            <summary>
+            API endpoints for managing calendar appointments
+            </summary>
+        </member>
+        <member name="M:DisprzTraining.Controllers.AppointmentsController.#ctor(DisprzTraining.Business.Services.IAppointmentService,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the AppointmentsController
+            </summary>
+            <param name="appointmentService">The appointment service</param>
+            <param name="mapper">The AutoMapper instance</param>
+        </member>
+        <member name="M:DisprzTraining.Controllers.AppointmentsController.GetAll">
+             <summary>
+             Retrieves all appointments
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /api/appointments
+            
+             </remarks>
+             <returns>A list of all appointments</returns>
+             <response code="200">Returns the list of appointments</response>
+        </member>
+        <member name="M:DisprzTraining.Controllers.AppointmentsController.GetById(System.Int32)">
+             <summary>
+             Retrieves a specific appointment by ID
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /api/appointments/5
+            
+             </remarks>
+             <param name="id">The ID of the appointment to retrieve</param>
+             <returns>The requested appointment</returns>
+             <response code="200">Returns the requested appointment</response>
+             <response code="404">If the appointment is not found</response>
+        </member>
+        <member name="M:DisprzTraining.Controllers.AppointmentsController.GetByUserId(System.Int32)">
+            <summary>
+            Retrieves all appointments for a specific user
+            </summary>
+        </member>
+        <member name="M:DisprzTraining.Controllers.AppointmentsController.Create(DisprzTraining.Models.DTOs.CreateAppointmentDTO)">
+             <summary>
+             Creates a new appointment
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/appointments
+                 {
+                    "title": "Team Meeting",
+                    "startTime": "2023-06-01T09:00:00Z",
+                    "endTime": "2023-06-01T10:00:00Z",
+                    "description": "Weekly team sync-up",
+                    "isAllDay": false,
+                    "location": "Conference Room A"
+                 }
+            
+             </remarks>
+             <param name="appointmentDto">The appointment data</param>
+             <returns>The created appointment</returns>
+             <response code="201">Returns the newly created appointment</response>
+             <response code="400">If the appointment data is invalid (e.g., end time before start time)</response>
+             <response code="409">If the appointment conflicts with an existing appointment</response>
+        </member>
+        <member name="M:DisprzTraining.Controllers.AppointmentsController.Update(System.Int32,DisprzTraining.Models.DTOs.UpdateAppointmentDTO)">
+             <summary>
+             Updates an existing appointment
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /api/appointments/5
+                 {
+                    "title": "Updated Team Meeting",
+                    "startTime": "2023-06-01T09:30:00Z",
+                    "endTime": "2023-06-01T10:30:00Z",
+                    "description": "Weekly team sync-up with project updates",
+                    "isAllDay": false,
+                    "location": "Conference Room B"
+                 }
+            
+             </remarks>
+             <param name="id">The ID of the appointment to update</param>
+             <param name="appointmentDto">The updated appointment data</param>
+             <returns>The updated appointment</returns>
+             <response code="200">Returns the updated appointment</response>
+             <response code="400">If the appointment data is invalid (e.g., end time before start time)</response>
+             <response code="404">If the appointment is not found</response>
+             <response code="409">If the appointment conflicts with an existing appointment</response>
+        </member>
+        <member name="M:DisprzTraining.Controllers.AppointmentsController.Delete(System.Int32)">
+             <summary>
+             Deletes an appointment
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 DELETE /api/appointments/5
+            
+             </remarks>
+             <param name="id">The ID of the appointment to delete</param>
+             <returns>No content</returns>
+             <response code="204">If the appointment was successfully deleted</response>
+             <response code="404">If the appointment is not found</response>
+        </member>
+        <member name="T:DisprzTraining.Controllers.OpenApiController">
+            <summary>
+            Controller for accessing OpenAPI documentation
+            </summary>
+        </member>
+        <member name="M:DisprzTraining.Controllers.OpenApiController.#ctor(Swashbuckle.AspNetCore.Swagger.ISwaggerProvider)">
+            <summary>
+            Initializes a new instance of the OpenApiController
+            </summary>
+            <param name="swaggerProvider">The Swagger provider</param>
+        </member>
+        <member name="M:DisprzTraining.Controllers.OpenApiController.GetOpenApiYaml">
+            <summary>
+            Gets the OpenAPI specification in YAML format
+            </summary>
+            <returns>The OpenAPI specification as YAML</returns>
+        </member>
+        <member name="M:DisprzTraining.Controllers.OpenApiController.GetOpenApiJson">
+            <summary>
+            Gets the OpenAPI specification in JSON format
+            </summary>
+            <returns>The OpenAPI specification as JSON</returns>
+        </member>
+        <member name="M:DisprzTraining.Controllers.UsersController.Register(DisprzTraining.Models.DTOs.RegisterDTO)">
+            <summary>
+            Registers a new user
+            </summary>
+        </member>
+        <member name="M:DisprzTraining.Controllers.UsersController.Login(DisprzTraining.Models.DTOs.LoginDTO)">
+            <summary>
+            Authenticates a user
+            </summary>
+        </member>
+        <member name="M:DisprzTraining.Controllers.UsersController.GetById(System.Int32)">
+            <summary>
+            Gets a user by ID
+            </summary>
+        </member>
+        <member name="T:DisprzTraining.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:DisprzTraining.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DisprzTraining.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DisprzTraining.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:DisprzTraining.Migrations.AddUserAndFixAppointments">
+            <inheritdoc />
+        </member>
+        <member name="M:DisprzTraining.Migrations.AddUserAndFixAppointments.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DisprzTraining.Migrations.AddUserAndFixAppointments.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DisprzTraining.Migrations.AddUserAndFixAppointments.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:DisprzTraining.Models.DTOs.AppointmentDTO">
+            <summary>
+            Data transfer object for appointment information
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.AppointmentDTO.Id">
+            <summary>
+            Unique identifier for the appointment
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.AppointmentDTO.Title">
+            <summary>
+            Title of the appointment
+            </summary>
+            <example>Team Meeting</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.AppointmentDTO.StartTime">
+            <summary>
+            Start time of the appointment in ISO 8601 format
+            </summary>
+            <example>2023-06-01T09:00:00Z</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.AppointmentDTO.EndTime">
+            <summary>
+            End time of the appointment in ISO 8601 format
+            </summary>
+            <example>2023-06-01T10:00:00Z</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.AppointmentDTO.Description">
+            <summary>
+            Description of the appointment
+            </summary>
+            <example>Weekly team sync-up meeting to discuss project progress</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.AppointmentDTO.IsAllDay">
+            <summary>
+            Indicates if the appointment is an all-day event
+            </summary>
+            <example>false</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.AppointmentDTO.Location">
+            <summary>
+            Location of the appointment
+            </summary>
+            <example>Conference Room A</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.AppointmentDTO.CreatedAt">
+            <summary>
+            When the appointment was created
+            </summary>
+            <example>2023-05-25T14:30:00Z</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.AppointmentDTO.UpdatedAt">
+            <summary>
+            When the appointment was last updated
+            </summary>
+            <example>2023-05-26T09:15:00Z</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.AppointmentDTO.UserId">
+            <summary>
+            User identifier for the appointment
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="T:DisprzTraining.Models.DTOs.CreateAppointmentDTO">
+            <summary>
+            Data transfer object for creating a new appointment
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.CreateAppointmentDTO.Title">
+            <summary>
+            Title of the appointment
+            </summary>
+            <example>Team Meeting</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.CreateAppointmentDTO.StartTime">
+            <summary>
+            Start time of the appointment in ISO 8601 format
+            </summary>
+            <example>2023-06-01T09:00:00Z</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.CreateAppointmentDTO.EndTime">
+            <summary>
+            End time of the appointment in ISO 8601 format
+            </summary>
+            <example>2023-06-01T10:00:00Z</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.CreateAppointmentDTO.Description">
+            <summary>
+            Description of the appointment
+            </summary>
+            <example>Weekly team sync-up meeting to discuss project progress</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.CreateAppointmentDTO.IsAllDay">
+            <summary>
+            Indicates if the appointment is an all-day event
+            </summary>
+            <example>false</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.CreateAppointmentDTO.Location">
+            <summary>
+            Location of the appointment
+            </summary>
+            <example>Conference Room A</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.CreateAppointmentDTO.UserId">
+            <summary>
+            User ID of the appointment
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="T:DisprzTraining.Models.DTOs.LoginDTO">
+            <summary>
+            Data transfer object for user login
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.LoginDTO.Username">
+            <summary>
+            Username for login
+            </summary>
+            <example>johndoe</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.LoginDTO.Password">
+            <summary>
+            Password for login
+            </summary>
+            <example>password123</example>
+        </member>
+        <member name="T:DisprzTraining.Models.DTOs.RegisterDTO">
+            <summary>
+            Data transfer object for user registration
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.RegisterDTO.Username">
+            <summary>
+            Username for registration
+            </summary>
+            <example>johndoe</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.RegisterDTO.Password">
+            <summary>
+            Password for registration
+            </summary>
+            <example>password123</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.RegisterDTO.Email">
+            <summary>
+            Email address
+            </summary>
+            <example>john.doe@example.com</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.RegisterDTO.FullName">
+            <summary>
+            Full name of the user
+            </summary>
+            <example>John Doe</example>
+        </member>
+        <member name="T:DisprzTraining.Models.DTOs.UpdateAppointmentDTO">
+            <summary>
+            Data transfer object for updating an existing appointment
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UpdateAppointmentDTO.Title">
+            <summary>
+            Title of the appointment
+            </summary>
+            <example>Updated Team Meeting</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UpdateAppointmentDTO.StartTime">
+            <summary>
+            Start time of the appointment in ISO 8601 format
+            </summary>
+            <example>2023-06-01T09:30:00Z</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UpdateAppointmentDTO.EndTime">
+            <summary>
+            End time of the appointment in ISO 8601 format
+            </summary>
+            <example>2023-06-01T10:30:00Z</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UpdateAppointmentDTO.Description">
+            <summary>
+            Description of the appointment
+            </summary>
+            <example>Weekly team sync-up with project updates</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UpdateAppointmentDTO.IsAllDay">
+            <summary>
+            Indicates if the appointment is an all-day event
+            </summary>
+            <example>false</example>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UpdateAppointmentDTO.Location">
+            <summary>
+            Location of the appointment
+            </summary>
+            <example>Conference Room B</example>
+        </member>
+        <member name="T:DisprzTraining.Models.DTOs.UserDTO">
+            <summary>
+            Data transfer object for user information
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UserDTO.Id">
+            <summary>
+            Unique identifier for the user
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UserDTO.Username">
+            <summary>
+            Username of the user
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UserDTO.Email">
+            <summary>
+            Email address of the user
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UserDTO.FullName">
+            <summary>
+            Full name of the user
+            </summary>
+        </member>
+        <member name="P:DisprzTraining.Models.DTOs.UserDTO.CreatedAt">
+            <summary>
+            When the user was created
+            </summary>
+        </member>
+    </members>
+</doc>
